@@ -39,8 +39,9 @@ end
 
 ### NOTES
 
-1. Buttons, Gamepad ID (index), Hats and Axes all start from 0 and NOT 1.
-2. Unsupported stuff (functions) by GLFW version that LÖVR uses is commented, That's in case you updated the GLFW library by replace.
+1. Buttons and Joystick/Gamepad ID (index) starts from 0 (First joystick/gamepad) to 15 (Last one).
+2. Hats array and Axes array index starts from 0 and NOT 1.
+3. Unsupported stuff (functions) by GLFW version that LÖVR uses is commented, That's in case you updated the GLFW library by replace.
 
 ### License
 
