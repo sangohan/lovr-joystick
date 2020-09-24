@@ -14,7 +14,7 @@ function lovr.draw()
   lovr.graphics.clear()
   if draw then
     -- If gamepad with index 0 (First gamepad) is available then
-	-- draw text contains joystick name!
+    -- draw text contains joystick name!
     if lovr.joystick.isAvailable(0) then
       lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 1)
 	end
