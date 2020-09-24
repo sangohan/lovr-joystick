@@ -17,7 +17,7 @@ function lovr.draw()
     -- draw text contains joystick name!
     if lovr.joystick.isAvailable(0) then
       lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 1)
-	end
+    end
   end
 end
 
