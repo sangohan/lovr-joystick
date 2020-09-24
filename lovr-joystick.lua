@@ -12,22 +12,22 @@ local ffi_string = ffi.string  -- Cache ffi.string so it would be better for per
 -- The same goes for Joystick/Gamepad buttons or names.
 ffi.cdef([[
     typedef struct GLFWwindow GLFWwindow;
-	typedef void (* GLFWjoystickfun)(int, int);
+    typedef void (* GLFWjoystickfun)(int, int);
 	
-	GLFWwindow* glfwGetCurrentContext(void);
+    GLFWwindow* glfwGetCurrentContext(void);
     int glfwJoystickPresent(int jid);
-	const float* glfwGetJoystickAxes(int jid, int* count);
+    const float* glfwGetJoystickAxes(int jid, int* count);
     const unsigned char* glfwGetJoystickButtons(int jid, int* count);
     const char* glfwGetJoystickName(int jid);
 	
-	//const unsigned char* glfwGetJoystickHats(int jid, int* count);
+    //const unsigned char* glfwGetJoystickHats(int jid, int* count);
     //const char* glfwGetJoystickGUID(int jid);
     //void glfwSetJoystickUserPointer(int jid, void* pointer);
     //void* glfwGetJoystickUserPointer(int jid);
     //GLFWjoystickfun glfwSetJoystickCallback(GLFWjoystickfun callback);
 	
-	//int glfwJoystickIsGamepad(int jid);
-	//int glfwUpdateGamepadMappings(const char* string);
+    //int glfwJoystickIsGamepad(int jid);
+    //int glfwUpdateGamepadMappings(const char* string);
     //const char* glfwGetGamepadName(int jid);
 ]])
 
