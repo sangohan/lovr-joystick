@@ -11,23 +11,21 @@ local draw = false
 
 -- Draw!
 function lovr.draw()
-  lovr.graphics.clear()
   if draw then
-    -- If gamepad with index 0 (First gamepad) is available then
-    -- draw text contains joystick name!
-    if lovr.joystick.isAvailable(0) then
-      lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 1)
-    end
+    lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 1)
   end
 end
 
 -- Update!
 function lovr.update()
-  -- If x button pressed by first gamepad (It has index 0)
-  if lovr.joystick.isDown(0, "x") then
-    draw = true
-  else
-    draw = false
+  -- If gamepad with index 0 (First gamepad) is available and x button pressed then
+  -- draw text contains joystick name!
+  if lovr.joystick.isAvailable(0) then
+    if lovr.joystick.isDown(0, "x") then
+      draw = true
+    else
+      draw = false
+    end
   end
 end
 ```
