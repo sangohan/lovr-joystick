@@ -39,7 +39,7 @@ end
 
 ### NOTES
 
-1. Buttons and Joystick/Gamepad ID (index) is value from 0 (First joystick/gamepad) to 15 (Last one).
+1. Buttons and Joystick/Gamepad ID (index) is value from 0 (First joystick/gamepad) to 14 (Buttons), or to 15 (index).
 2. Hats array and Axes array index starts from 0 (NOT 1).
 3. Unsupported stuff (functions) by GLFW version that LÖVR uses is commented, That's in case you updated the GLFW library by replace.
 
