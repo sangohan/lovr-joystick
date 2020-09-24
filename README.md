@@ -18,8 +18,8 @@ end
 
 -- Update!
 function lovr.update()
-  -- If gamepad with index 0 (First gamepad) is available and x button pressed then
-  -- draw text contains joystick name!
+  -- If joystick with index 0 (First joystick) is available and x button pressed then
+  -- draw text contains first joystick name!
   if lovr.joystick.isAvailable(0) then
     if lovr.joystick.isDown(0, "x") then
       draw = true
