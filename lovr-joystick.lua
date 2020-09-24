@@ -74,7 +74,7 @@ function joystick.getName(id)
 end
 
 function joystick.getAxes(id)
-  local axes = ffi.new("int[4]")
+  local axes = ffi.new("int[7]")
   return C.glfwGetJoystickAxes(id, axes)
 end
 
