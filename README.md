@@ -1,18 +1,18 @@
 # lovr-joystick
 
-Joystick and Gamepad input module for LÖVR!
+Joystick and Gamepad input module for LÖVR
 
 ### Usage
 
 ```lua
--- Require module (Copy lovr-joystick.lua)
+-- Require module
 lovr.joystick = require("lovr-joystick")
 local draw = false
 
 -- Draw!
 function lovr.draw()
   if draw then
-    lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 1)
+    lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 0.5)
   end
 end
 
@@ -36,12 +36,17 @@ end
 - `joystick.isDown(id, button)` returns true if button is hold down from joystick/gamepad with id.
 - `joystick.getName(id)` returns string contains joystick/gamepad name.
 - `joystick.getAxes(id)` returns array contains joystick/gamepad axes.
+- `joystick.getHats(id)` returns array contains joystick/gamepad hats.
+- `joystick.getGUID(id)` returns string contains GUID of the joystick/gamepad.
+- `joystick.isGamepad(id)` returns true if joystick is actually gamepad.
+- `joystick.updateGamepadMappings(str)` updates gamepad controls from string.
+- `joystick.getGamepadName(id)` if your joystick is gamepad, This can be used to get name of gamepad.
 
 ### NOTES
 
 1. Buttons and Joystick/Gamepad ID (index) is value from 0 (First joystick/gamepad) to 14 (Buttons), or to 15 (index).
 2. Hats array and Axes array index starts from 0 (NOT 1).
-3. Unsupported stuff (functions) by GLFW version that LÖVR uses is commented, That's in case you updated the GLFW library by replace.
+3. If LÖVR throws error that says missing procedure(s), Get latest 64-bit [pre-compiled binaries of GLFW3 library](https://www.glfw.org/download.html) and replace that one in LÖVR directory with it.
 
 ### License
 

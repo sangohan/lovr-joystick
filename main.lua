@@ -3,7 +3,7 @@ local draw = false
 
 function lovr.draw()
   if draw then
-    lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 1)
+    lovr.graphics.print(lovr.joystick.getName(0), 0, 0, -5, 0.5)
   end
 end
 
