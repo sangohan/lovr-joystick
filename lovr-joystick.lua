@@ -7,6 +7,7 @@ local ffi = assert(type(jit) == "table" and               -- Only run if we have
   require("ffi"), "lovr-joystick cannot run on this platform!")
 local C = (lovr.getOS() ~= "Android" and lovr.getOS() ~= "Web") and ffi.load("glfw3") or ffi.C
 local bor = require("bit").bor
+local C_str = ffi.string
 
 -- FFI C Definitions
 -- NOTES: Index of arrays you get from Joystick/Gamepad functions start at 0, NOT 1!
@@ -68,7 +69,7 @@ function joystick.isDown(id, button)
 end
 
 function joystick.getName(id)
-  return ffi.string(C.glfwGetJoystickName(id))
+  return C_str(C.glfwGetJoystickName(id))
 end
 
 function joystick.getAxes(id)
@@ -82,7 +83,7 @@ function joystick.getHats(id)
 end
 
 function joystick.getGUID(id)
-  return ffi.string(C.glfwGetJoystickGUID(id))
+  return C_str(C.glfwGetJoystickGUID(id))
 end
 
 function joystick.isGamepad(id)
@@ -94,7 +95,7 @@ function joystick.updateGamepadMappings(str)
 end
 
 function joystick.getGamepadName(id)
-  return ffi.string(C.glfwGetGamepadName(id))
+  return C_str(C.glfwGetGamepadName(id))
 end
 
 return joystick
