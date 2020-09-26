@@ -32,7 +32,8 @@ end
 
 ### API
 
-- `joystick.isAvailable(id)` returns true if joystick/gamepad with id is available.
+- `joystick.isAvailable(id)` returns true if joystick/gamepad with id is available/present.
+- `joystick.isConnected(id)` returns true if joystick/gamepad is connected, Otherwise returns false.
 - `joystick.isDown(id, button)` returns true if button is hold down from joystick/gamepad with id.
 - `joystick.getName(id)` returns string contains joystick/gamepad name.
 - `joystick.getAxes(id)` returns array contains joystick/gamepad axes.
@@ -47,6 +48,7 @@ end
 1. Buttons and Joystick/Gamepad ID (index) is value from 0 (First joystick/gamepad) to 14 (Buttons), or to 15 (index).
 2. Hats array and Axes array index starts from 0 (NOT 1).
 3. If LÖVR throws error that says missing procedure(s), Get latest 64-bit [pre-compiled binaries of GLFW3 library](https://www.glfw.org/download.html) and replace that one in LÖVR directory with it.
+4. Calling `joystick.isConnected(id)` in `lovr.update` without a way to stop it's loop might cause callback overflow error.
 
 ### License
 
