@@ -106,10 +106,10 @@ function joystick.isConnected(id)
   C.glfwSetJoystickCallback(function(jid, event)
     if (jid == id) then
       if (event == 0x00040001) then
-	    con = true
-	  elseif (event == 0x00040002) then
-	    con = false
-	  end
+        con = true
+      elseif (event == 0x00040002) then
+	con = false
+      end
     end
   end)
   return con
