@@ -34,7 +34,7 @@ ffi.cdef([[
 ]])
 
 local window = C.glfwGetCurrentContext()
-local joystick.buttons = {
+joystick.buttons = {
   a        = 0,
   b        = 1,
   x        = 2,
