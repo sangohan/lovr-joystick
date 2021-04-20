@@ -22,7 +22,7 @@ ffi.cdef([[
     const float* glfwGetJoystickAxes(int jid, int* count);
     const unsigned char* glfwGetJoystickButtons(int jid, int* count);
     const char* glfwGetJoystickName(int jid);
-	GLFWjoystickfun glfwSetJoystickCallback (GLFWjoystickfun callback);
+    GLFWjoystickfun glfwSetJoystickCallback (GLFWjoystickfun callback);
 	
     const unsigned char* glfwGetJoystickHats(int jid, int* count);
     const char* glfwGetJoystickGUID(int jid);
@@ -30,11 +30,11 @@ ffi.cdef([[
     int glfwJoystickIsGamepad(int jid);
     int glfwUpdateGamepadMappings(const char* string);
     const char* glfwGetGamepadName(int jid);
-	void glfwPollEvents(void);
+    void glfwPollEvents(void);
 ]])
 
 local window = C.glfwGetCurrentContext()
-local joystick_buttons = {
+local joystick.buttons = {
   a        = 0,
   b        = 1,
   x        = 2,
@@ -52,10 +52,10 @@ local joystick_buttons = {
   left     = 14
 }
 
-joystick_buttons.cross    = joystick_buttons.a
-joystick_buttons.circle   = joystick_buttons.b
-joystick_buttons.square   = joystick_buttons.x
-joystick_buttons.triangle = joystick_buttons.y
+joystick.buttons.cross    = joystick.buttons.a
+joystick.buttons.circle   = joystick.buttons.b
+joystick.buttons.square   = joystick.buttons.x
+joystick.buttons.triangle = joystick.buttons.y
 
 local joystick = {}
 
@@ -65,7 +65,7 @@ end
 
 function joystick.isDown(id, button)
   if not id and not button then return false end
-  local b = joystick_buttons[button] or button
+  local b = joystick.buttons[button] or button
   local c = ffi.new("int[15]")
   assert(b and type(b) == "number", "Unknown gamepad button: " .. button)
   return C.glfwGetJoystickButtons(id, c)[b] == 1
