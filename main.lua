@@ -9,10 +9,6 @@ end
 
 function lovr.update()
   if lovr.joystick.isAvailable(0) then
-    if lovr.joystick.isDown(0, "x") then
-      draw = true
-    else
-      draw = false
-    end
+    draw = lovr.joystick.isDown(0, "x")
   end
 end
